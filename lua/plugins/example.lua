@@ -1,22 +1,20 @@
 return {
   {
     "akinsho/flutter-tools.nvim",
-    lazy = false, -- Garante que o plugin carregue assim que o Neovim abrir
+    lazy = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "stevearc/dressing.nvim", -- Ajuda na interface de seleção de dispositivos
+      "stevearc/dressing.nvim",
     },
     config = function(_, opts)
-      -- Isso garante que o plugin seja configurado com as suas opções
       require("flutter-tools").setup(opts)
     end,
     opts = {
       widget_guides = { enabled = true },
       dev_log = { enabled = false },
-      hot_reload = true, -- Ativa o reload ao salvar (:w)
+      hot_reload = true,
       lsp = {
         color = { enabled = true },
-        -- Aqui garantimos que o LSP do Dart não entre em conflito
         settings = {
           showTodos = true,
           completeFunctionCalls = true,
