@@ -32,3 +32,7 @@ end, { desc = "Arquivos Recentes" })
 vim.keymap.set("n", "<leader>ff", function()
   Snacks.picker.files()
 end, { desc = "Buscar Arquivos (Projeto)" })
+
+vim.keymap.set("n", "gd", function()
+  Snacks.picker.lsp_definitions({ jump = { reuse_win = true } })
+end, { desc = "Ir para Definição Real (Arquivo)" })
